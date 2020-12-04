@@ -74,4 +74,9 @@ public class MovieInfo {
     public void setPoster(String poster) {
         this.poster = poster;
     }
+
+    public String toString()
+    {
+        return String.format("%s produced in %s",title,year);
+    }
 }
