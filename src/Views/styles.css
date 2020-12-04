@@ -22,3 +22,10 @@
     -fx-padding: 10px;
     -fx-background-radius: 10px;
 }
+
+#stackPane
+{
+    -fx-padding: 10px;
+    -fx-background-radius: 10px;
+    -fx-background-color: #29434e;
+}

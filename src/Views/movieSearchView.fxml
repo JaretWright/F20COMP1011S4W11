@@ -23,10 +23,10 @@
                   <Button mnemonicParsing="false" onAction="#searchButton" text="Get Movie List" />
                </children>
             </HBox>
-            <HBox>
+            <HBox spacing="10.0">
                <children>
                   <ListView fx:id="listView" prefHeight="263.0" prefWidth="960.0" />
-                  <StackPane>
+                  <StackPane id="stackPane">
                      <children>
                         <ImageView fx:id="imageView" fitHeight="264.0" fitWidth="224.0" pickOnBounds="true" preserveRatio="true" />
                      </children>

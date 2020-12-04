@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import java.io.File;
@@ -38,13 +39,21 @@ public class MovieSearchController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         numberShowingLabel.setText("");
         totalMoviesLabel.setText("");
+
+        listView.getSelectionModel().selectedItemProperty().addListener(
+                (obs, oldValue, movieSelected) -> {
+                    imageView.setImage(new Image(movieSelected.getPoster()));
+                });
     }
 
     @FXML
     private void searchButton()
     {
+        String searchText = searchTextField.getText();
+        searchText = searchText.replace(" ", "%20");
+
         //call the API and save the JSON file to the hard drive
-        OMDBApiUtility.getMovieFromSearch(searchTextField.getText());
+        OMDBApiUtility.getMovieFromSearch(searchText);
 
         //read the json file and create an APIResponseModel
         File jsonFile = new File("src/Utilities/movies.json");
